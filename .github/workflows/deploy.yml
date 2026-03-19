@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Databricks CLI
-        run: pip install databricks-cli
+        uses: databricks/setup-cli@main
       - name: Validate Bundle
         run: databricks bundle validate --target dev
         env:
@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Databricks CLI
-        run: pip install databricks-cli
+        uses: databricks/setup-cli@main
       - name: Deploy Bundle to Dev
         run: databricks bundle deploy --target dev
         env:
